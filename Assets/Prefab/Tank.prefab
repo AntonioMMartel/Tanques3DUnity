@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 2803939886938854812}
   - component: {fileID: 331037771026627735}
   - component: {fileID: 2848253120458637446}
+  - component: {fileID: 8035571468005686014}
   m_Layer: 3
   m_Name: Tank
   m_TagString: Player
@@ -327,6 +328,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
+--- !u!114 &8035571468005686014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87197350519977504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41b25c9a8688c47adf4572e6b10f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1581813849915029536, guid: a43d0fb3a8981e144abf1553dad78ba3, type: 3}
+  firePoint: {fileID: 8400053456581707177}
 --- !u!1 &781436560835261158
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8400053456581707177}
+  - component: {fileID: 3704019290409435803}
   m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
@@ -358,6 +374,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8921478488812151627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3704019290409435803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781436560835261158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a05b188adfea1439b66e1b97a99162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
+  maxDistance: 20
+  maxBounces: 5
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &9138945216235483373
 GameObject:
   m_ObjectHideFlags: 0
