@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 400654597}
   - component: {fileID: 400654599}
   - component: {fileID: 400654600}
+  - component: {fileID: 400654601}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -309,7 +310,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &400654599
@@ -420,6 +421,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 400654598}
   moveSpeed: 5
+--- !u!114 &400654601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400654595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30ed16ef217a784c9d9bff4fa48c0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
 --- !u!1 &415395544
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +579,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 400654596}
   m_Follow: {fileID: 400654596}
   m_Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -592,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 530782921}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7009093, y: 0, z: 0, w: 0.71325046}
-  m_LocalPosition: {x: -0.492961, y: 12.61084, z: 1.0080942}
+  m_LocalPosition: {x: -0.492961, y: 22.61084, z: 1.0080942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -753,7 +767,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -780,7 +794,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7009094, y: 0, z: 0, w: 0.7132504}
-  m_LocalPosition: {x: -0.492961, y: 12.61084, z: 1.0080942}
+  m_LocalPosition: {x: -0.492961, y: 22.61084, z: 1.0080942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -866,10 +880,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 10, z: 0}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_FollowOffset: {x: 0, y: 20, z: 0}
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
