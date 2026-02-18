@@ -121,7 +121,6 @@ GameObject:
   - component: {fileID: 2803939886938854812}
   - component: {fileID: 331037771026627735}
   - component: {fileID: 2848253120458637446}
-  - component: {fileID: 1666656391499367071}
   m_Layer: 3
   m_Name: Tank
   m_TagString: Player
@@ -242,7 +241,7 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1666656391499367071}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TankAttack, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 0
@@ -328,20 +327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
---- !u!114 &1666656391499367071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87197350519977504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c41b25c9a8688c47adf4572e6b10f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1581813849915029536, guid: a43d0fb3a8981e144abf1553dad78ba3, type: 3}
-  firePoint: {fileID: 8400053456581707177}
 --- !u!1 &781436560835261158
 GameObject:
   m_ObjectHideFlags: 0
