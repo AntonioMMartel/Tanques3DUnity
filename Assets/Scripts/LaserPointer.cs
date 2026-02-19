@@ -35,14 +35,14 @@ public class LaserPointer : MonoBehaviour
         {
             if (Physics.Raycast(origin, direction, out RaycastHit hit, maxDistance, wallMask))
             {
-                // Add the hit point to the line
+                // Añade el punto de impacto con la pared al muro
                 lineRenderer.positionCount += 1;
                 lineRenderer.SetPosition(lineRenderer.positionCount - 1, hit.point);
 
-                // Reflect the direction
+                // Reflejar rayo usando normal de punto de impacto al muro
                 direction = Vector3.Reflect(direction, hit.normal);
 
-                // Move origin slightly past collision to avoid hitting the same wall
+                // Prevenir otra colosión con el muro
                 origin = hit.point + direction * 0.01f;
 
                 bounceCount++;
