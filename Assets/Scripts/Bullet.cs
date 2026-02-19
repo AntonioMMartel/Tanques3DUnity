@@ -16,11 +16,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Target"))
+       IHittable hittable = other.GetComponent<IHittable>();
+
+        if (hittable != null)
         {
-            Destroy(gameObject);
+            hittable.Hit(this.gameObject);
         }
+
     }
 }
