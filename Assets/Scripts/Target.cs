@@ -5,10 +5,14 @@ using UnityEngine;
 public class Target : MonoBehaviour, IHittable
 {
     [SerializeField] int scoreValue = 10;
+    public bool hitAlready = false;
     public void Hit(GameObject owner)
     {
+        if (hitAlready) return;
 
+        hitAlready = true;
         ScoreManager.Instance.AddScore(scoreValue);
+        Debug.Log(scoreValue);  
         Destroy(owner);
         Destroy(this.gameObject);
 
