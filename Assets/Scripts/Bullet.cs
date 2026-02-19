@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody rb;
 
+    public GameObject owner;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
