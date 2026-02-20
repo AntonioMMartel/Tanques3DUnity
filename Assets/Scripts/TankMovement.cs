@@ -18,7 +18,7 @@ public class TankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(movementInput.x * moveSpeed, 0, movementInput.y * moveSpeed);
+        rb.linearVelocity = new Vector3(movementInput.x * moveSpeed, 0, movementInput.y * moveSpeed);
     }
 
     public void Move(InputAction.CallbackContext context)
