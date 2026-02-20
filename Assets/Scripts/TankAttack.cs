@@ -11,6 +11,8 @@ public class TankAttack : MonoBehaviour
     [SerializeField] float fireRate = 2f; 
     private bool isFiring = false;
     private float fireTimer = 0f;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip gunShotSound;
 
     [SerializeField] int maxAmmo = 30;
     [SerializeField] TMP_Text ammoText;
@@ -59,9 +61,10 @@ public class TankAttack : MonoBehaviour
     {
         if (currentAmmo <= 0) return;
 
+        audioSource.PlayOneShot(gunShotSound);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Bullet>().owner = this.gameObject;
-
+        
         currentAmmo--;
         UpdateAmmoUI();
     }
