@@ -6,14 +6,15 @@ using UnityEngine.InputSystem;
 public class TankAim : MonoBehaviour
 {
     Camera cam;
+
     [SerializeField] float rotationSpeed = 10f;
-    // Start is called before the first frame update
+    [SerializeField] Transform turretVisual;
+
     void Start()
     {
         cam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         AimTowardMouse();
@@ -27,16 +28,16 @@ public class TankAim : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Vector3 targetPoint = hit.point;
-            targetPoint.y = transform.position.y;
+            targetPoint.y = turretVisual.position.y;
 
-            Vector3 direction = targetPoint - transform.position;
+            Vector3 direction = targetPoint - turretVisual.position;
 
             if (direction.sqrMagnitude > 0.001f)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-                transform.rotation = Quaternion.Slerp(
-                    transform.rotation,
+                turretVisual.rotation = Quaternion.Slerp(
+                    turretVisual.rotation,
                     targetRotation,
                     rotationSpeed * Time.deltaTime
                 );

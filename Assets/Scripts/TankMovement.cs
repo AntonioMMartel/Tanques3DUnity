@@ -5,20 +5,34 @@ using UnityEngine.InputSystem;
 
 public class TankMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] Rigidbody rb;
     [SerializeField] float moveSpeed = 5f;
 
+    [Header("Base (Visual2)")]
+    [SerializeField] Transform baseVisual;
+    [SerializeField] float baseTurnSpeed = 12f;
+
     Vector2 movementInput;
-    void Start()
+
+    void FixedUpdate()
     {
-        
+        Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y) * moveSpeed;
+        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
+
+        RotateBaseTowardMovement(move);
     }
 
-    // Update is called once per frame
-    void Update()
+    void RotateBaseTowardMovement(Vector3 move)
     {
-        rb.linearVelocity = new Vector3(movementInput.x * moveSpeed, 0, movementInput.y * moveSpeed);
+        Vector3 planar = new Vector3(move.x, 0f, move.z);
+        if (planar.sqrMagnitude < 0.001f) return;
+
+        Quaternion targetRot = Quaternion.LookRotation(planar.normalized);
+        baseVisual.rotation = Quaternion.Slerp(
+            baseVisual.rotation,
+            targetRot,
+            baseTurnSpeed * Time.fixedDeltaTime
+        );
     }
 
     public void Move(InputAction.CallbackContext context)
