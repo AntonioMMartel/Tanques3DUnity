@@ -17,7 +17,7 @@ public class TankMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y) * moveSpeed;
-        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
+        rb.linearVelocity = new Vector3(move.x, rb.linearVelocity.y, move.z);
 
         RotateBaseTowardMovement(move);
     }
